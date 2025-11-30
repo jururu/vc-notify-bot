@@ -97,7 +97,7 @@ function startTimeSignalJob() {
     const m = jst.getMinutes(); // 0〜59
 
     // JST 22:00 / 0:00 以外は何もしない
-    if (!(m === 0 && (h === 22 || h === 0 || h === 14))) return;
+    if (!(m === 0 && (h === 22 || h === 0))) return;
 
     // 同じ日付・同じ時間帯には一回だけ送る
     const key = `${jst.getFullYear()}-${jst.getMonth()}-${jst.getDate()}-${h}`;
@@ -175,4 +175,5 @@ if (!TOKEN) {
 } else {
   client.login(TOKEN);
 }
+
 
