@@ -214,7 +214,7 @@ function sendTimeSignal(jstDate, hourJST) {
     // メッセージ本文を組み立て
     const lines = [];
     lines.push(`⏰ 時報です。現在の時刻は JST ${hhLabel} です。そろそろ寝ようね！`);
-    lines.push('このサーバーで、いま公開ボイスチャンネルにいる人たちです：');
+    lines.push('このサーバーで、いまボイスチャンネルにいる人たちです：');
 
     channelUserMap.forEach((info) => {
       lines.push(`・${info.name}：${info.users.join('、')}`);
@@ -234,3 +234,4 @@ if (!TOKEN) {
 } else {
   client.login(TOKEN);
 }
+
