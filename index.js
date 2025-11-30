@@ -40,7 +40,7 @@ client.on('messageCreate', (message) => {
 
   if (message.content === '!setvc') {
     guildChannelMap.set(message.guild.id, message.channel.id);
-    message.reply('このチャンネルをVC参加通知＆時報の送信先に設定しました。');
+    message.reply('このチャンネルをVC参加通知＆時報の送信先に設定したよ！');
     console.log(`ギルド ${message.guild.id} の通知先を ${message.channel.id} に設定`);
   }
 });
@@ -97,7 +97,7 @@ function startTimeSignalJob() {
     const m = jst.getMinutes(); // 0〜59
 
     // JST 22:00 / 0:00 以外は何もしない
-    if (!(m === 0 && (h === 22 || h === 0))) return;
+    if (!(m === 0 && (h === 22 || h === 0 || h === 14))) return;
 
     // 同じ日付・同じ時間帯には一回だけ送る
     const key = `${jst.getFullYear()}-${jst.getMonth()}-${jst.getDate()}-${h}`;
@@ -175,3 +175,4 @@ if (!TOKEN) {
 } else {
   client.login(TOKEN);
 }
+
